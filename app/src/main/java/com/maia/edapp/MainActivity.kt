@@ -11,6 +11,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun conflict() {
-        print("merge conflicte")
+        print("new thingy")
     }
 }
