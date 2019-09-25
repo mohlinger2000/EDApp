@@ -19,13 +19,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val buttonList = listOf<Button>(findViewById(R.id.breakfast),
+        listOf<Button>(findViewById(R.id.breakfast),
             findViewById(R.id.lunch),
             findViewById(R.id.dinner),
             findViewById(R.id.sn1),
             findViewById(R.id.sn2),
             findViewById(R.id.sn3))
-        buttonList.forEach{b -> b.setOnClickListener{addMeal(b)}}
+            .forEach{b -> b.setOnClickListener{addMeal(b)}}
     }
 
     private fun addMeal(b: Button) {
