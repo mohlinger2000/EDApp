@@ -19,18 +19,16 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
-        val breakfast = findViewById<Button>(R.id.breakfast)
-        val lunch = findViewById<Button>(R.id.lunch)
-        val dinner = findViewById<Button>(R.id.dinner)
-        val sn1 = findViewById<Button>(R.id.sn1)
-        val sn2 = findViewById<Button>(R.id.sn2)
-        val sn3 = findViewById<Button>(R.id.sn3)
-        val buttonList = listOf<Button>(breakfast, lunch, dinner, sn1, sn2, sn3)
-        buttonList.forEach{b -> b.setOnClickListener{addMeal()}}
+        val buttonList = listOf<Button>(findViewById(R.id.breakfast),
+            findViewById(R.id.lunch),
+            findViewById(R.id.dinner),
+            findViewById(R.id.sn1),
+            findViewById(R.id.sn2),
+            findViewById(R.id.sn3))
+        buttonList.forEach{b -> b.setOnClickListener{addMeal(b)}}
     }
 
-    private fun addMeal() {
+    private fun addMeal(b: Button) {
         val textbox = EditText(this)
         var addedText: String //TODO: add to database
         val dialog = AlertDialog.Builder(this)
