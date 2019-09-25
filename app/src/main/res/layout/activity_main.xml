@@ -25,15 +25,10 @@
             android:id="@+id/breakfast"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="41dp"
-            android:layout_marginLeft="41dp"
-            android:layout_marginTop="124dp"
-            android:layout_marginEnd="23dp"
-            android:layout_marginRight="23dp"
-            android:layout_marginBottom="40dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="120dp"
             android:text="Breakfast"
-            app:layout_constraintBottom_toTopOf="@+id/sn1"
-            app:layout_constraintEnd_toStartOf="@+id/lunch"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -41,107 +36,78 @@
             android:id="@+id/sn1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="41dp"
-            android:layout_marginLeft="41dp"
-            android:layout_marginTop="40dp"
-            android:layout_marginEnd="37dp"
-            android:layout_marginRight="37dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="200dp"
             android:text="Snack 1"
-            app:layout_constraintEnd_toStartOf="@+id/sn2"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/breakfast" />
+            app:layout_constraintTop_toTopOf="parent" />
 
     <Button
             android:id="@+id/sn2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="37dp"
-            android:layout_marginLeft="37dp"
-            android:layout_marginTop="43dp"
-            android:layout_marginEnd="28dp"
-            android:layout_marginRight="28dp"
+            android:layout_marginTop="200dp"
             android:text="Snack 2"
             app:layout_constraintEnd_toStartOf="@+id/sn3"
             app:layout_constraintStart_toEndOf="@+id/sn1"
-            app:layout_constraintTop_toBottomOf="@+id/lunch" />
+            app:layout_constraintTop_toTopOf="@+id/textView" />
 
     <Button
             android:id="@+id/sn3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="28dp"
-            android:layout_marginLeft="28dp"
-            android:layout_marginEnd="41dp"
-            android:layout_marginRight="41dp"
-            android:layout_marginBottom="417dp"
+            android:layout_marginTop="200dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginRight="40dp"
             android:text="Snack 3"
-            app:layout_constraintBottom_toTopOf="@+id/chat"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/sn2" />
+            app:layout_constraintTop_toTopOf="parent" />
 
     <Button
             android:id="@+id/lunch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="23dp"
-            android:layout_marginLeft="23dp"
-            android:layout_marginTop="65dp"
-            android:layout_marginEnd="28dp"
-            android:layout_marginRight="28dp"
-            android:layout_marginBottom="43dp"
+            android:layout_marginTop="120dp"
             android:text="Lunch"
-            app:layout_constraintBottom_toTopOf="@+id/sn2"
             app:layout_constraintEnd_toStartOf="@+id/dinner"
             app:layout_constraintStart_toEndOf="@+id/breakfast"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            app:layout_constraintTop_toTopOf="parent" />
 
     <Button
             android:id="@+id/dinner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="28dp"
-            android:layout_marginLeft="28dp"
-            android:layout_marginTop="124dp"
-            android:layout_marginEnd="41dp"
-            android:layout_marginRight="41dp"
-            android:layout_marginBottom="40dp"
+            android:layout_marginTop="120dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginRight="40dp"
             android:text="Dinner"
-            app:layout_constraintBottom_toTopOf="@+id/sn3"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/lunch"
             app:layout_constraintTop_toTopOf="parent" />
 
     <Button
             android:id="@+id/water"
             android:layout_width="204dp"
             android:layout_height="70dp"
-            android:layout_marginStart="41dp"
-            android:layout_marginLeft="41dp"
-            android:layout_marginTop="41dp"
-            android:layout_marginEnd="166dp"
-            android:layout_marginRight="166dp"
-            android:layout_marginBottom="35dp"
+            android:layout_marginTop="80dp"
             android:text="Track Water"
             android:textSize="24sp"
-            app:layout_constraintBottom_toTopOf="@+id/setAlarm"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/sn1" />
+            app:layout_constraintTop_toBottomOf="@+id/sn2" />
 
     <Button
             android:id="@+id/setAlarm"
             android:layout_width="204dp"
             android:layout_height="70dp"
-            android:layout_marginStart="41dp"
-            android:layout_marginLeft="41dp"
-            android:layout_marginEnd="166dp"
-            android:layout_marginRight="166dp"
-            android:layout_marginBottom="201dp"
             android:text="Set Alarm"
             android:textSize="24sp"
-            app:layout_constraintBottom_toTopOf="@+id/meals"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/water" />
 
     <Button
             android:id="@+id/calendar"
