@@ -1,5 +1,6 @@
 package com.maia.edapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -26,6 +27,9 @@ class MainActivity : AppCompatActivity() {
             findViewById(R.id.sn2),
             findViewById(R.id.sn3))
             .forEach{b -> b.setOnClickListener{addMeal(b)}}
+
+        val waterButton = findViewById<Button>(R.id.water)
+        waterButton.setOnClickListener{goToFirstActivity()}
     }
 
     private fun addMeal(b: Button) {
@@ -39,5 +43,10 @@ class MainActivity : AppCompatActivity() {
             .setNegativeButton("Cancel"){_, _ -> }
         val alertDialog = dialog.create()
         alertDialog.show()
+    }
+
+    private fun goToFirstActivity() {
+        val intent = Intent(this@MainActivity, FirstActivity::class.java)
+        startActivity(intent)
     }
 }
