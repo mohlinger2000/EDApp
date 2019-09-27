@@ -1,24 +1,26 @@
-package com.maia.edapp
+package com.maia.edapp.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
 import androidx.appcompat.app.AlertDialog
-import androidx.core.app.ComponentActivity
-import androidx.core.app.ComponentActivity.ExtraData
-import androidx.core.content.ContextCompat.getSystemService
-import android.icu.lang.UCharacter.GraphemeClusterBreak.T
 import android.widget.EditText
-import kotlinx.android.synthetic.main.activity_main.*
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
+import com.maia.edapp.R
+import com.maia.edapp.db.FirebaseWriter
+import com.maia.edapp.models.User
 
 
 class MainActivity : AppCompatActivity() {
 
+
+
+    private val defaultUser = User("tobias@funke.com")
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
         listOf<Button>(findViewById(R.id.breakfast),
             findViewById(R.id.lunch),
             findViewById(R.id.dinner),
@@ -29,13 +31,19 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun addMeal(b: Button) {
+        val database = FirebaseWriter()
         val textbox = EditText(this)
-        var addedText: String //TODO: add to database
+        var addedText = "" //TODO: add to database
         val dialog = AlertDialog.Builder(this)
             .setMessage("Enter your meal:")
             .setTitle("Meal Input")
             .setView(textbox)
-            .setPositiveButton("Add") {_, _ -> addedText = textbox.text.toString()}
+            .setPositiveButton("Add") {_, _ -> run {
+                addedText = textbox.text.toString()
+                if(addedText != "") {
+                    database.addMeal(addedText, defaultUser, b.text.toString().toLowerCase()) //TODO: snacks need to be configured
+                }
+            }}
             .setNegativeButton("Cancel"){_, _ -> }
         val alertDialog = dialog.create()
         alertDialog.show()
