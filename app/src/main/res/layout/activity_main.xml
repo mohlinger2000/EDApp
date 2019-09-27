@@ -5,7 +5,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity">
+        tools:context=".activities.MainActivity">
 
     <TextView
             android:id="@+id/textView"
@@ -126,15 +126,15 @@
             android:text="Meals"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/chat"
+            app:layout_constraintEnd_toStartOf="@+id/resources"
             app:layout_constraintStart_toEndOf="@+id/calendar" />
 
     <Button
-            android:id="@+id/chat"
+            android:id="@+id/resources"
             android:layout_width="132dp"
             android:layout_height="52dp"
-            android:text="Chat"
-            android:textSize="18sp"
+            android:text="Resources"
+            android:textSize="17sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/meals" />

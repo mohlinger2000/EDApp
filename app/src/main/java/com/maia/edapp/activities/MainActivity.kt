@@ -1,24 +1,18 @@
-package com.maia.edapp
+package com.maia.edapp.activities
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
 import androidx.appcompat.app.AlertDialog
-import androidx.core.app.ComponentActivity
-import androidx.core.app.ComponentActivity.ExtraData
-import androidx.core.content.ContextCompat.getSystemService
-import android.icu.lang.UCharacter.GraphemeClusterBreak.T
 import android.widget.EditText
-import kotlinx.android.synthetic.main.activity_main.*
+import com.maia.edapp.R
 
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AbstractActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        //setContentView(R.layout.activity_main)
 
         listOf<Button>(findViewById(R.id.breakfast),
             findViewById(R.id.lunch),
@@ -30,6 +24,9 @@ class MainActivity : AppCompatActivity() {
 
         val waterButton = findViewById<Button>(R.id.water)
         waterButton.setOnClickListener{goToFirstActivity()}
+
+        val alarmButton = findViewById<Button>(R.id.setAlarm)
+        alarmButton.setOnClickListener{goToFourthActivity()}
     }
 
     private fun addMeal(b: Button) {
@@ -47,6 +44,11 @@ class MainActivity : AppCompatActivity() {
 
     private fun goToFirstActivity() {
         val intent = Intent(this@MainActivity, FirstActivity::class.java)
+        startActivity(intent)
+    }
+
+    private fun goToFourthActivity() {
+        val intent = Intent(this@MainActivity, FourthActivity::class.java)
         startActivity(intent)
     }
 }
