@@ -1,6 +1,6 @@
 package com.maia.edapp.activities
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AlertDialog
@@ -12,7 +12,7 @@ import com.maia.edapp.db.FirebaseWriter
 import com.maia.edapp.models.User
 
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AbstractActivity() {
 
 
 
@@ -20,7 +20,8 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        //setContentView(R.layout.activity_main)
+
         listOf<Button>(findViewById(R.id.breakfast),
             findViewById(R.id.lunch),
             findViewById(R.id.dinner),
@@ -28,6 +29,12 @@ class MainActivity : AppCompatActivity() {
             findViewById(R.id.sn2),
             findViewById(R.id.sn3))
             .forEach{b -> b.setOnClickListener{addMeal(b)}}
+
+        val waterButton = findViewById<Button>(R.id.water)
+        waterButton.setOnClickListener{goToFirstActivity()}
+
+        val alarmButton = findViewById<Button>(R.id.setAlarm)
+        alarmButton.setOnClickListener{goToFourthActivity()}
     }
 
     private fun addMeal(b: Button) {
@@ -47,5 +54,15 @@ class MainActivity : AppCompatActivity() {
             .setNegativeButton("Cancel"){_, _ -> }
         val alertDialog = dialog.create()
         alertDialog.show()
+    }
+
+    private fun goToFirstActivity() {
+        val intent = Intent(this@MainActivity, FirstActivity::class.java)
+        startActivity(intent)
+    }
+
+    private fun goToFourthActivity() {
+        val intent = Intent(this@MainActivity, FourthActivity::class.java)
+        startActivity(intent)
     }
 }
