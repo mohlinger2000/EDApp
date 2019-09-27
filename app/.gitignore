@@ -1,2 +1,6 @@
 /build
 /app/google-services.json
+*.iml
+local.properties
+/*/local.properties
+.DS_Store
