@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:weightSum="6"
+        android:background="#62def8">
+    <TextView
+            android:id="@+id/breakfast_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_margin="30dp"
+            android:textSize="22sp"
+            android:layout_weight="1"
+            android:text="Breakfast: "/>
+    <TextView
+            android:id="@+id/lunch_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_margin="30dp"
+            android:textSize="22sp"
+            android:layout_weight="1"
+            android:text="Lunch: "/>
+    <TextView
+            android:id="@+id/dinner_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_margin="30dp"
+            android:textSize="22sp"
+            android:layout_weight="1"
+            android:text="Dinner: "/>
+    <TextView
+            android:id="@+id/sn1_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_margin="30dp"
+            android:textSize="22sp"
+            android:layout_weight="1"
+            android:text="Snack 1: "/>
+    <TextView
+            android:id="@+id/sn2_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_margin="30dp"
+            android:textSize="22sp"
+            android:layout_weight="1"
+            android:text="Snack 2: "/>
+    <TextView
+            android:id="@+id/sn3_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_margin="30dp"
+            android:textSize="22sp"
+            android:layout_weight="1"
+            android:text="Snack 3: "/>
+
+</LinearLayout>

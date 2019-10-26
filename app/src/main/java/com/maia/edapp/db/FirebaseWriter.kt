@@ -41,14 +41,12 @@ class FirebaseWriter {
                     val cal = Calendar.getInstance()
                     val format = SimpleDateFormat("YYYYMMdd")
                     val curDate = format.format(cal.time)
-                    val curDate1 = "20191027"
-
-                    if (document.data?.get(curDate1) != null) {
-                        val dateMap = document.data?.get(curDate1) as MutableMap<String, MutableList<String>?>
+                    if (document.data?.get(curDate) != null) {
+                        val dateMap = document.data?.get(curDate) as MutableMap<String, MutableList<String>?>
                         val mealList = dateMap[meal]
                         mealList?.add(food)
                         dateMap[meal] = mealList
-                        dbUser.update(curDate1, dateMap)
+                        dbUser.update(curDate, dateMap)
                             .addOnSuccessListener { Log.d(TAG, "DocumentSnapshot successfully updated!") }
                             .addOnFailureListener { e -> Log.w(TAG, "Error updating document", e) }
                     } else {
@@ -61,7 +59,7 @@ class FirebaseWriter {
                                 newDateMap[s] = mutableListOf()
                             }
                         }
-                        dbUser.update(curDate1, newDateMap)
+                        dbUser.update(curDate, newDateMap)
                             .addOnSuccessListener { Log.d(TAG, "DocumentSnapshot successfully updated!") }
                             .addOnFailureListener { e -> Log.w(TAG, "Error updating document", e) }
                     }
@@ -75,4 +73,26 @@ class FirebaseWriter {
             }
     }
 
+    fun getMeals(user: User, date: String, func: (MutableMap<String, MutableList<String>?>) -> Unit) {
+        val dbUser = db.collection("users").document(user.email)
+        var dateMap = mutableMapOf<String, MutableList<String>?>()
+        dbUser
+            .get()
+            .addOnSuccessListener { document ->
+                if (document != null) {
+                    if (document.data?.get(date) != null) {
+                        dateMap = document.data?.get(date) as MutableMap<String, MutableList<String>?>
+                        func(dateMap)
+                    } else {
+                        Log.d(TAG, "No info recorded on this date")
+                    }
+                } else {
+                    Log.d(TAG, "No such document")
+
+                }
+            }
+            .addOnFailureListener { exception ->
+                Log.d(TAG, "get failed with ", exception)
+            }
+    }
 }
