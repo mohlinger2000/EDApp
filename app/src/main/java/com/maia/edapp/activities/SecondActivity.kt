@@ -7,7 +7,8 @@ import com.maia.edapp.R
 class SecondActivity : AbstractActivity() {
     //calendar
     override fun onCreate(savedInstanceState: Bundle?) {
+        super.setContentView(R.layout.activity_second)
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_second)
+
     }
 }

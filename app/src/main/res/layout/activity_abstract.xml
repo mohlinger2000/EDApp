@@ -1,40 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".activities.AbstractActivity">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="bottom"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:weightSum="3">
+        tools:context=".activities.AbstractActivity">
 
     <Button
-        android:id="@+id/calendar"
-        android:layout_width="138dp"
-        android:layout_height="49dp"
-        android:text="Calendar"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/meals"
-        app:layout_constraintStart_toStartOf="parent" />
+            android:id="@+id/calendar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Calendar"
+            android:layout_weight="1"/>
 
     <Button
-        android:id="@+id/meals"
-        android:layout_width="132dp"
-        android:layout_height="52dp"
-        android:text="Meals"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/resources"
-        app:layout_constraintStart_toEndOf="@+id/calendar" />
+            android:id="@+id/meals"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Meals"/>
 
-    <Button
-        android:id="@+id/resources"
-        android:layout_width="132dp"
-        android:layout_height="52dp"
-        android:text="Resources"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/meals" />
+        <Button
+            android:id="@+id/resources"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Resources" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

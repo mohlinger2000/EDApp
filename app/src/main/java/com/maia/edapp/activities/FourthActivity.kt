@@ -7,8 +7,9 @@ import com.maia.edapp.R
 class FourthActivity : AbstractActivity() {
     //alarm
     override fun onCreate(savedInstanceState: Bundle?) {
+        super.setContentView(R.layout.activity_fourth)
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_fourth)
+
     }
 
 

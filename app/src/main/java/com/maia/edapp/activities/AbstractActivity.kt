@@ -4,13 +4,19 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.FrameLayout
+import android.widget.RelativeLayout
 import com.maia.edapp.R
 
+
+
+
 abstract class AbstractActivity : AppCompatActivity() {
+    protected lateinit var fullLayout: RelativeLayout;
+    protected lateinit var subActivityContent: FrameLayout;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
 
         val calendarButton = findViewById<Button>(R.id.calendar)
         calendarButton.setOnClickListener{goToSecondActivity()}
@@ -21,7 +27,6 @@ abstract class AbstractActivity : AppCompatActivity() {
         val mealButton = findViewById<Button>(R.id.meals)
         mealButton.setOnClickListener{goToMainActivity()}
     }
-
     private fun goToSecondActivity() {
         val intent = Intent(this, SecondActivity::class.java)
         startActivity(intent)
