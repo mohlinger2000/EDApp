@@ -14,8 +14,6 @@ import com.maia.edapp.models.User
 
 class MainActivity : AbstractActivity() {
 
-
-
     private val defaultUser = User("tobias@funke.com")
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,7 +38,7 @@ class MainActivity : AbstractActivity() {
     private fun addMeal(b: Button) {
         val database = FirebaseWriter()
         val textbox = EditText(this)
-        var addedText = "" //TODO: add to database
+        var addedText: String//
         val dialog = AlertDialog.Builder(this)
             .setMessage("Enter your meal:")
             .setTitle("Meal Input")
@@ -48,7 +46,12 @@ class MainActivity : AbstractActivity() {
             .setPositiveButton("Add") {_, _ -> run {
                 addedText = textbox.text.toString()
                 if(addedText != "") {
-                    database.addMeal(addedText, defaultUser, b.text.toString().toLowerCase()) //TODO: snacks need to be configured
+                    database.addMeal(addedText, defaultUser, when(b.text.toString().toLowerCase()) {
+                        "snack 1" -> "sn1"
+                        "snack 2" -> "sn2"
+                        "snack 3" -> "sn3"
+                        else -> b.text.toString().toLowerCase()
+                    })
                 }
             }}
             .setNegativeButton("Cancel"){_, _ -> }
