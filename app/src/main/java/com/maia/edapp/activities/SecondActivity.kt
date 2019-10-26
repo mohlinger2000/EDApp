@@ -5,13 +5,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.maia.edapp.R
 import java.util.*
-import androidx.core.app.ComponentActivity
-import androidx.core.app.ComponentActivity.ExtraData
-import androidx.core.content.ContextCompat.getSystemService
-import android.icu.lang.UCharacter.GraphemeClusterBreak.T
 import android.os.Build
 import androidx.annotation.RequiresApi
-import java.time.ZoneId
+import android.widget.CalendarView
+import android.widget.Toast
+
 
 class SecondActivity : AbstractActivity() {
     //calendar button
@@ -21,12 +19,10 @@ class SecondActivity : AbstractActivity() {
         super.setContentView(R.layout.activity_second)
         super.onCreate(savedInstanceState)
 
-        val date = Date()
-        val localDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate()
-        val cal = Calendar.getInstance(TimeZone.getTimeZone("America/New York"))
-        cal.time = date
-        val year = cal.get(Calendar.YEAR)
-        val month = cal.get(Calendar.MONTH)
-        val day = cal.get(Calendar.DAY_OF_MONTH)
+        val calendarView = findViewById<CalendarView>(R.id.calendarView)
+        calendarView?.setOnDateChangeListener { view, year, month, dayOfMonth ->
+            val msg = "Selected date is " + (month + 1) + "/" + dayOfMonth + "/" + year
+            Toast.makeText(this@SecondActivity, msg, Toast.LENGTH_SHORT).show()
+        }
     }
 }

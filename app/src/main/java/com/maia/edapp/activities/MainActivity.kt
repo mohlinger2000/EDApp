@@ -18,7 +18,6 @@ class MainActivity : AbstractActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         //main screen
-
         setContentView(R.layout.activity_main)
         super.onCreate(savedInstanceState)
         listOf<Button>(findViewById(R.id.breakfast),
