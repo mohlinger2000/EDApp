@@ -5,5 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activities.FourthActivity">
+    <include
+            android:id="@+id/bottombar"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            layout="@layout/activity_abstract" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -18,8 +18,8 @@ class SecondActivity : AbstractActivity() {
     @RequiresApi(Build.VERSION_CODES.O)
     @TargetApi(Build.VERSION_CODES.M)
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
         super.setContentView(R.layout.activity_second)
+        super.onCreate(savedInstanceState)
 
         val date = Date()
         val localDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate()

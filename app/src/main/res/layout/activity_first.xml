@@ -145,5 +145,11 @@
         android:text="Cup 4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+    <include
+            android:id="@+id/bottombar"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            layout="@layout/activity_abstract" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

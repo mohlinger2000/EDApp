@@ -21,34 +21,11 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
-    <Button
-        android:id="@+id/calendar"
-        android:layout_width="138dp"
-        android:layout_height="49dp"
-        android:text="Calendar"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/meals"
-        app:layout_constraintStart_toStartOf="parent" />
+    <include
+            android:id="@+id/bottombar"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            layout="@layout/activity_abstract" />
 
-    <Button
-        android:id="@+id/meals"
-        android:layout_width="132dp"
-        android:layout_height="52dp"
-        android:text="Meals"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/resources"
-        app:layout_constraintStart_toEndOf="@+id/calendar" />
-
-    <Button
-        android:id="@+id/resources"
-        android:layout_width="132dp"
-        android:layout_height="52dp"
-        android:text="Resources"
-        android:textSize="17sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/meals" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

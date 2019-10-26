@@ -9,8 +9,8 @@ import com.maia.edapp.R
 class FirstActivity : AbstractActivity() {
     //water button
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
         super.setContentView(R.layout.activity_first)
+        super.onCreate(savedInstanceState)
 
         listOf<Button>(findViewById(R.id.cup1),
             findViewById(R.id.cup2),
