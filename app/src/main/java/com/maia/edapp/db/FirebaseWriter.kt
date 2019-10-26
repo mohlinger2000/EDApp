@@ -4,6 +4,9 @@ package com.maia.edapp.db
 import android.util.Log
 import com.google.firebase.firestore.FirebaseFirestore
 import com.maia.edapp.models.User
+import java.text.SimpleDateFormat
+import java.util.*
+import kotlin.collections.HashMap
 
 class FirebaseWriter {
     private val db = FirebaseFirestore.getInstance()
@@ -35,11 +38,34 @@ class FirebaseWriter {
             .get()
             .addOnSuccessListener { document ->
                 if (document != null) {
-                    val mealList = document.data?.get(meal) as MutableList<String>
-                    mealList.add(food)
-                    dbUser.update(meal, mealList)
-                        .addOnSuccessListener { Log.d(TAG, "DocumentSnapshot successfully updated!") }
-                        .addOnFailureListener { e -> Log.w(TAG, "Error updating document", e) }
+                    val cal = Calendar.getInstance()
+                    val format = SimpleDateFormat("YYYYMMdd")
+                    val curDate = format.format(cal.time)
+                    val curDate1 = "20191027"
+
+                    if (document.data?.get(curDate1) != null) {
+                        val dateMap = document.data?.get(curDate1) as MutableMap<String, MutableList<String>?>
+                        val mealList = dateMap[meal]
+                        mealList?.add(food)
+                        dateMap[meal] = mealList
+                        dbUser.update(curDate1, dateMap)
+                            .addOnSuccessListener { Log.d(TAG, "DocumentSnapshot successfully updated!") }
+                            .addOnFailureListener { e -> Log.w(TAG, "Error updating document", e) }
+                    } else {
+                        val newDateMap = HashMap<String, MutableList<String>>()
+                        val mealList = mutableListOf<String>()
+                        mealList.add(food)
+                        newDateMap[meal] = mealList
+                        listOf("breakfast", "lunch", "dinner", "sn1", "sn2", "sn3").forEach{s ->
+                            if (s != meal) {
+                                newDateMap[s] = mutableListOf()
+                            }
+                        }
+                        dbUser.update(curDate1, newDateMap)
+                            .addOnSuccessListener { Log.d(TAG, "DocumentSnapshot successfully updated!") }
+                            .addOnFailureListener { e -> Log.w(TAG, "Error updating document", e) }
+                    }
+
                 } else {
                     Log.d(TAG, "No such document")
                 }
@@ -47,6 +73,6 @@ class FirebaseWriter {
             .addOnFailureListener { exception ->
                 Log.d(TAG, "get failed with ", exception)
             }
-
     }
+
 }
