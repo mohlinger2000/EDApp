@@ -5,10 +5,10 @@ import android.os.Bundle
 import com.maia.edapp.R
 
 class FourthActivity : AbstractActivity() {
-    //alarm
+    //alarm button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_fourth)
+        super.setContentView(R.layout.activity_fourth)
     }
 
 

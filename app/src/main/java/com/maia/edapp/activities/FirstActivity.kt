@@ -1,15 +1,16 @@
 package com.maia.edapp.activities
 
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.widget.Button
 import com.maia.edapp.R
 
 class FirstActivity : AbstractActivity() {
-    //water
+    //water button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_first)
+        super.setContentView(R.layout.activity_first)
 
         listOf<Button>(findViewById(R.id.cup1),
             findViewById(R.id.cup2),

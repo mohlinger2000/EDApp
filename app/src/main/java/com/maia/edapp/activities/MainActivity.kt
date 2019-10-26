@@ -19,8 +19,9 @@ class MainActivity : AbstractActivity() {
     private val defaultUser = User("tobias@funke.com")
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        //main screen
         super.onCreate(savedInstanceState)
-        //setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_main)
 
         listOf<Button>(findViewById(R.id.breakfast),
             findViewById(R.id.lunch),

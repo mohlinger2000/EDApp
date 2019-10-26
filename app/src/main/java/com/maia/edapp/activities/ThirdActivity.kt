@@ -4,10 +4,11 @@ import android.os.Bundle
 import com.maia.edapp.R
 
 class ThirdActivity : AbstractActivity() {
-    //resources
+    //resources button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_third)
+        super.setContentView(R.layout.activity_third)
     }
-    
+
+
 }
