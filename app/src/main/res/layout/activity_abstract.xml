@@ -3,28 +3,28 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
         android:gravity="bottom"
         android:orientation="horizontal"
-        android:layout_alignParentBottom="true"
         android:weightSum="3">
-        tools:context=".activities.AbstractActivity">
+    tools:context=".activities.AbstractActivity">
 
     <Button
             android:id="@+id/calendar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Calendar"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:text="Calendar" />
 
     <Button
             android:id="@+id/meals"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Meals"/>
+            android:text="Meals" />
 
-        <Button
+    <Button
             android:id="@+id/resources"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
