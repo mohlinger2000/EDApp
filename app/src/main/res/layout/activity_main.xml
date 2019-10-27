@@ -1,113 +1,127 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".activities.MainActivity">
 
     <TextView
             android:id="@+id/textView"
-            android:layout_width="102dp"
-            android:layout_height="56dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="Meals"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textSize="36sp"
-            app:layout_constraintBottom_toTopOf="@+id/lunch"
-            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.037" />
+            app:layout_constraintTop_toTopOf="parent"/>
 
-    <Button
-            android:id="@+id/breakfast"
-            android:layout_width="wrap_content"
+    <LinearLayout
+            android:id="@+id/top_row"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="40dp"
-            android:layout_marginLeft="40dp"
-            android:layout_marginTop="120dp"
-            android:text="Breakfast"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-            android:id="@+id/sn1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="40dp"
-            android:layout_marginLeft="40dp"
-            android:layout_marginTop="200dp"
-            android:text="Snack 1"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-            android:id="@+id/sn2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="200dp"
-            android:text="Snack 2"
-            app:layout_constraintEnd_toStartOf="@+id/sn3"
-            app:layout_constraintStart_toEndOf="@+id/sn1"
-            app:layout_constraintTop_toTopOf="@+id/textView" />
-
-    <Button
-            android:id="@+id/sn3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="200dp"
-            android:layout_marginEnd="40dp"
-            android:layout_marginRight="40dp"
-            android:text="Snack 3"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            app:layout_constraintBottom_toTopOf="@+id/mid_row"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-            android:id="@+id/lunch"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="120dp"
-            android:text="Lunch"
-            app:layout_constraintEnd_toStartOf="@+id/dinner"
-            app:layout_constraintStart_toEndOf="@+id/breakfast"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintVertical_bias="0.1"
+            >
 
-    <Button
-            android:id="@+id/dinner"
-            android:layout_width="wrap_content"
+        <Button
+                android:id="@+id/breakfast"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Breakfast" />
+
+        <Button
+                android:id="@+id/lunch"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Lunch" />
+
+        <Button
+                android:id="@+id/dinner"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Dinner" />
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:id="@+id/mid_row"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="120dp"
-            android:layout_marginEnd="40dp"
-            android:layout_marginRight="40dp"
-            android:text="Dinner"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal"
+            android:weightSum="3"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-            android:id="@+id/water"
-            android:layout_width="204dp"
-            android:layout_height="70dp"
-            android:layout_marginTop="80dp"
-            android:text="Track Water"
-            android:textSize="24sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/sn2" />
+            app:layout_constraintTop_toBottomOf="@+id/top_row"
+            app:layout_constraintBottom_toTopOf="@+id/bottom_col"
+            app:layout_constraintVertical_bias="0.1">
 
-    <Button
-            android:id="@+id/setAlarm"
-            android:layout_width="204dp"
-            android:layout_height="70dp"
-            android:text="Set Alarm"
-            android:textSize="24sp"
+        <Button
+                android:id="@+id/sn1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Snack 1" />
+
+        <Button
+                android:id="@+id/sn2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Snack 2" />
+
+        <Button
+                android:id="@+id/sn3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Snack 3" />
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:id="@+id/bottom_col"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:weightSum="2"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/water" />
+            app:layout_constraintTop_toBottomOf="@+id/mid_row"
+            app:layout_constraintBottom_toTopOf="@+id/bottombar"
+            app:layout_constraintVertical_bias="0.8">
+
+        <Button
+                android:id="@+id/water"
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:text="Track Water"
+                android:textSize="24sp" />
+
+        <Button
+                android:id="@+id/setAlarm"
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:text="Set Alarm"
+                android:textSize="24sp" />
+
+    </LinearLayout>
+
 
     <include
             android:id="@+id/bottombar"

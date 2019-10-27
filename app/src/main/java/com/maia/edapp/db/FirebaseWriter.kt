@@ -31,7 +31,70 @@ class FirebaseWriter {
             }
 
     }
+    fun addWater(user: User) {
+        val dbUser = db.collection("users").document(user.email)
+        dbUser
+            .get()
+            .addOnSuccessListener { document ->
+                if (document != null) {
+                    val cal = Calendar.getInstance()
+                    val format = SimpleDateFormat("YYYYMMdd")
+                    val curDate = format.format(cal.time)
+                    if (document.data?.get(curDate) != null) {
+                        val dateMap = document.data?.get(curDate) as MutableMap<String, MutableList<String>?>
+                        var curWater = dateMap["numWater"]?.get(0)?.toInt()
+                        curWater = curWater!!.plus(1)
+                        dateMap["numWater"] = mutableListOf(curWater.toString())
+                        dbUser.update(curDate, dateMap)
+                            .addOnSuccessListener { Log.d(TAG, "DocumentSnapshot successfully updated!") }
+                            .addOnFailureListener { e -> Log.w(TAG, "Error updating document", e) }
+                    } else {
+                        val newDateMap = HashMap<String, MutableList<String>>()
 
+                        val curWater = 1
+                        val numWater = mutableListOf(curWater.toString())
+                        newDateMap["numWater"] = numWater
+                        listOf("breakfast", "lunch", "dinner", "sn1", "sn2", "sn3").forEach{s ->
+                            newDateMap[s] = mutableListOf()
+                        }
+                        dbUser.update(curDate, newDateMap)
+                            .addOnSuccessListener { Log.d(TAG, "DocumentSnapshot successfully updated!") }
+                            .addOnFailureListener { e -> Log.w(TAG, "Error updating document", e) }
+                    }
+                } else {
+                    Log.d(TAG, "No such document")
+                }
+            }
+            .addOnFailureListener { exception ->
+                Log.d(TAG, "get failed with ", exception)
+            }
+    }
+    fun getWater(user: User, func: (Int) -> Unit) {
+        val dbUser = db.collection("users").document(user.email)
+        var dateMap = mutableMapOf<String, MutableList<String>?>()
+        dbUser
+            .get()
+            .addOnSuccessListener { document ->
+                if (document != null) {
+                    val cal = Calendar.getInstance()
+                    val format = SimpleDateFormat("YYYYMMdd")
+                    val curDate = format.format(cal.time)
+                    if (document.data?.get(curDate) != null) {
+                        dateMap = document.data?.get(curDate) as MutableMap<String, MutableList<String>?>
+                        val numWater = dateMap.get("numWater")!!.get(0)!!.toInt()
+                        func(numWater)
+                    } else {
+                        Log.d(TAG, "No info recorded on this date")
+                    }
+                } else {
+                    Log.d(TAG, "No such document")
+
+                }
+            }
+            .addOnFailureListener { exception ->
+                Log.d(TAG, "get failed with ", exception)
+            }
+    }
     fun addMeal(food: String, user: User, meal: String) {
         val dbUser = db.collection("users").document(user.email)
         dbUser
@@ -54,7 +117,10 @@ class FirebaseWriter {
                         val mealList = mutableListOf<String>()
                         mealList.add(food)
                         newDateMap[meal] = mealList
-                        listOf("breakfast", "lunch", "dinner", "sn1", "sn2", "sn3").forEach{s ->
+                        listOf("breakfast", "lunch", "dinner", "sn1", "sn2", "sn3", "numWater").forEach{s ->
+                            if (s == "numWater") {
+                                newDateMap[s] = mutableListOf("0")
+                            }
                             if (s != meal) {
                                 newDateMap[s] = mutableListOf()
                             }

@@ -54,9 +54,9 @@ class SecondActivity : AbstractActivity() {
                 val breakfastList = dm["breakfast"]
                 breakfastText.setText("Breakfast: $breakfastList")
                 val lunchList = dm["lunch"]
-                lunchText.setText("Lunch: $breakfastList")
+                lunchText.setText("Lunch: $lunchList")
                 val dinnerList = dm["dinner"]
-                dinnerText.setText("Lunch: $dinnerList")
+                dinnerText.setText("Dinner: $dinnerList")
                 val sn1List = dm["sn1"]
                 sn1Text.setText("Snack 1: $sn1List")
                 val sn2List = dm["sn2"]

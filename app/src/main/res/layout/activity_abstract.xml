@@ -12,23 +12,26 @@
 
     <Button
             android:id="@+id/calendar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="75dp"
             android:layout_weight="1"
-            android:text="Calendar" />
+            android:text="Calendar"
+            android:textSize="18sp" />
 
     <Button
             android:id="@+id/meals"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="75dp"
             android:layout_weight="1"
-            android:text="Meals" />
+            android:text="Meals"
+            android:textSize="18sp" />
 
     <Button
             android:id="@+id/resources"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="75dp"
             android:layout_weight="1"
-            android:text="Resources" />
+            android:text="Resources"
+            android:textSize="18sp" />
 
 </LinearLayout>
