@@ -24,12 +24,13 @@ import androidx.annotation.RequiresApi
 class FourthActivity : AbstractActivity() {
     //alarm button
     var myTimePicker: TimePicker? = null
-    lateinit var buttonstartSetDialog: Button
-    lateinit var textAlarmPrompt: TextView
-    var timePickerDialog: TimePickerDialog? = null
+    lateinit var buttonstartSetDialog : Button
+    lateinit var buttonstopSetDialog : Button
+    lateinit var textAlarmPrompt : TextView
+    var timePickerDialog : TimePickerDialog? = null
     val RQS_1 = 1
-    private lateinit var alarmIntent: PendingIntent
-    private var alarmMgr: AlarmManager? = null
+    private lateinit var alarmIntent : PendingIntent
+    private var alarmMgr : AlarmManager? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.setContentView(R.layout.activity_fourth)
@@ -43,6 +44,11 @@ class FourthActivity : AbstractActivity() {
                     openTimePickerDialog(false)
                 }
             }
+        buttonstopSetDialog = findViewById<Button>(R.id.stopSetDialog)
+        buttonstopSetDialog.setOnClickListener {v ->
+                textAlarmPrompt!!.setText("")
+                cancelAlarm(this@FourthActivity)
+        }
     }
     @RequiresApi(Build.VERSION_CODES.N)
     fun openTimePickerDialog(is24r : Boolean) {
@@ -82,8 +88,9 @@ class FourthActivity : AbstractActivity() {
         )
     }
     fun cancelAlarm(context : Context) {
-        val intent = Intent(context, FourthActivity::class.java)
-        val sender : PendingIntent = PendingIntent.getBroadcast(context, 0 , intent, 0)
+        Toast.makeText(context, "Alarm has been canceled.", Toast.LENGTH_LONG).show()
+        val intent = Intent(context, AlarmReceiver::class.java)
+        val sender : PendingIntent = PendingIntent.getBroadcast(context, 1 , intent, PendingIntent.FLAG_UPDATE_CURRENT)
         val alarmManager : AlarmManager = context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
         alarmManager.cancel(sender)
     }

@@ -12,14 +12,14 @@ import android.widget.Toast
 
 class AlarmReceiver : BroadcastReceiver() {
     override fun onReceive(context : Context, intent : Intent) {
-        Toast.makeText(context, "Alarm Received", Toast.LENGTH_LONG).show()
+        Toast.makeText(context, "Make sure to eat! :)", Toast.LENGTH_LONG).show()
 
         val notification : Uri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_RINGTONE)
         val ringtone : Ringtone = RingtoneManager.getRingtone(context, notification)
         ringtone.play()
 
         val vibrator : Vibrator = context.getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
-        vibrator.vibrate(5000)
+        vibrator.vibrate(3000)
 
         val PARTIAL_WAKE_LOCK = 32
         val powerMan : PowerManager = context.getSystemService(Context.POWER_SERVICE) as PowerManager
