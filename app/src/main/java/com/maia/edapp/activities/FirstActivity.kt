@@ -1,10 +1,6 @@
 package com.maia.edapp.activities
 
-import android.content.Intent
-import android.graphics.Color
 import android.os.Bundle
-import android.widget.Button
-import androidx.core.content.ContextCompat
 import com.google.android.material.button.MaterialButton
 import com.maia.edapp.R
 import com.maia.edapp.db.FirebaseWriter
