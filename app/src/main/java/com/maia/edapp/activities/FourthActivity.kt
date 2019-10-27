@@ -1,23 +1,18 @@
 package com.maia.edapp.activities
 
-import android.annotation.TargetApi
 import android.app.AlarmManager
 import android.app.PendingIntent
 import android.app.TimePickerDialog
-import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import com.maia.edapp.R
 import android.widget.Toast
-import android.os.PowerManager
 import android.widget.Button
 import android.widget.TextView
 import android.widget.TimePicker
 import android.icu.util.Calendar
-import android.media.Ringtone
 import android.os.Build
-import android.view.View
 import androidx.annotation.RequiresApi
 
 

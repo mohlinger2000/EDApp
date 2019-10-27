@@ -2,7 +2,6 @@ package com.maia.edapp.activities
 
 import android.annotation.TargetApi
 import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.maia.edapp.R
 import java.util.*
@@ -12,8 +11,6 @@ import com.maia.edapp.db.FirebaseWriter
 import com.maia.edapp.models.User
 import android.view.LayoutInflater
 import android.view.Gravity
-import android.view.MotionEvent
-import android.view.View
 import android.widget.*
 
 
