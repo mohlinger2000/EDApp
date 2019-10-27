@@ -7,42 +7,45 @@
     tools:context=".activities.FourthActivity">
 
     <TextView
-        android:id="@+id/alarmPrompt"
-        android:layout_width="140dp"
-        android:layout_height="65dp"
-        android:layout_marginTop="40dp"
-        android:text="Alarm"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textSize="36sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.553"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.003" />
+            android:id="@+id/alarmPrompt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Alarm"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textSize="36sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.50"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.01" />
 
-    <Button
-        android:id="@+id/startSetDialog"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Start Alarm"
-        app:layout_constraintBottom_toTopOf="@+id/bottombar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/alarmPrompt"
-        app:layout_constraintVertical_bias="0.243" />
+    <com.google.android.material.button.MaterialButton
+            android:id="@+id/startSetDialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Start Alarm"
+            app:layout_constraintBottom_toTopOf="@+id/bottombar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/alarmPrompt"
+            app:layout_constraintVertical_bias="0.25"
+            app:strokeColor="@color/black"
+            app:strokeWidth="2dp"/>
 
-    <Button
-        android:id="@+id/stopSetDialog"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Stop Alarm"
-        app:layout_constraintBottom_toTopOf="@+id/bottombar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/startSetDialog"
-        app:layout_constraintVertical_bias="0.117" />
+    <com.google.android.material.button.MaterialButton
+            android:id="@+id/stopSetDialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Stop Alarm"
+            app:layout_constraintBottom_toTopOf="@+id/bottombar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/alarmPrompt"
+            app:layout_constraintVertical_bias="0.5"
+            app:strokeColor="@color/black"
+            app:strokeWidth="2dp"/>
 
     <include
             android:id="@+id/bottombar"
