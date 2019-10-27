@@ -15,7 +15,15 @@
 
         <activity android:name=".activities.AlarmReceiver"></activity>
         <activity android:name=".activities.FourthActivity"></activity>
-        <activity android:name=".activities.ThirdActivity" />
+        <activity android:name=".activities.ThirdActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="https"
+                    android:host="nationaleatingdisorders.org" />
+            </intent-filter>
+        </activity>
         <activity android:name=".activities.SecondActivity" />
         <activity android:name=".activities.FirstActivity" />
         <activity android:name=".activities.MainActivity">
