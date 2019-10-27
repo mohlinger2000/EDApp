@@ -4,6 +4,8 @@ import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.widget.Button
+import androidx.core.content.ContextCompat
+import com.google.android.material.button.MaterialButton
 import com.maia.edapp.R
 import com.maia.edapp.db.FirebaseWriter
 import com.maia.edapp.models.User
@@ -19,7 +21,7 @@ class FirstActivity : AbstractActivity() {
 
         db.getWater(defaultUser) {numWater ->
             var tempNumWater = numWater
-            listOf<Button>(findViewById(R.id.cup1),
+            listOf<MaterialButton>(findViewById(R.id.cup1),
                 findViewById(R.id.cup2),
                 findViewById(R.id.cup3),
                 findViewById(R.id.cup4),
@@ -29,7 +31,6 @@ class FirstActivity : AbstractActivity() {
                 findViewById(R.id.cup8))
                 .forEach{b ->
                     if (tempNumWater > 0) {
-                        b.setBackgroundColor(Color.BLUE)
                         b.isClickable = false
                         b.isEnabled = false
                         tempNumWater--
@@ -38,12 +39,10 @@ class FirstActivity : AbstractActivity() {
         }
     }
 
-    private fun trackWater(b : Button) {
+    private fun trackWater(b : MaterialButton) {
         val db = FirebaseWriter()
         db.addWater(defaultUser)
-        b.setBackgroundColor(Color.BLUE)
         b.isClickable = false
         b.isEnabled = false
-
     }
 }

@@ -13,6 +13,7 @@
             android:text="Meals"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textSize="36sp"
+            android:textColor="@color/white"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
@@ -31,26 +32,35 @@
             app:layout_constraintVertical_bias="0.1"
             >
 
-        <Button
+        <com.google.android.material.button.MaterialButton
                 android:id="@+id/breakfast"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Breakfast" />
+                android:text="Breakfast"
+                android:textColor="@color/white"
+                app:strokeColor="@color/black"
+                app:strokeWidth="2dp"/>
 
-        <Button
+        <com.google.android.material.button.MaterialButton
                 android:id="@+id/lunch"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Lunch" />
+                android:text="Lunch"
+                android:textColor="@color/white"
+                app:strokeColor="@color/black"
+                app:strokeWidth="2dp"/>
 
-        <Button
+        <com.google.android.material.button.MaterialButton
                 android:id="@+id/dinner"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Dinner" />
+                android:text="Dinner"
+                android:textColor="@color/white"
+                app:strokeColor="@color/black"
+                app:strokeWidth="2dp"/>
 
     </LinearLayout>
 
@@ -67,26 +77,35 @@
             app:layout_constraintBottom_toTopOf="@+id/bottom_col"
             app:layout_constraintVertical_bias="0.1">
 
-        <Button
+        <com.google.android.material.button.MaterialButton
                 android:id="@+id/sn1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Snack 1" />
+                android:text="Snack 1"
+                android:textColor="@color/white"
+                app:strokeColor="@color/black"
+                app:strokeWidth="2dp"/>
 
-        <Button
+        <com.google.android.material.button.MaterialButton
                 android:id="@+id/sn2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Snack 2" />
+                android:text="Snack 2"
+                android:textColor="@color/white"
+                app:strokeColor="@color/black"
+                app:strokeWidth="2dp"/>
 
-        <Button
+        <com.google.android.material.button.MaterialButton
                 android:id="@+id/sn3"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Snack 3" />
+                android:text="Snack 3"
+                android:textColor="@color/white"
+                app:strokeColor="@color/black"
+                app:strokeWidth="2dp"/>
 
     </LinearLayout>
 
@@ -104,21 +123,27 @@
             app:layout_constraintBottom_toTopOf="@+id/bottombar"
             app:layout_constraintVertical_bias="0.8">
 
-        <Button
+        <com.google.android.material.button.MaterialButton
                 android:id="@+id/water"
                 android:layout_width="fill_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:text="Track Water"
-                android:textSize="24sp" />
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                app:strokeColor="@color/black"
+                app:strokeWidth="2dp"/>
 
-        <Button
+        <com.google.android.material.button.MaterialButton
                 android:id="@+id/setAlarm"
                 android:layout_width="fill_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:text="Set Alarm"
-                android:textSize="24sp" />
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                app:strokeColor="@color/black"
+                app:strokeWidth="2dp"/>
 
     </LinearLayout>
 

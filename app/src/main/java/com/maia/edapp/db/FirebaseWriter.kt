@@ -50,7 +50,6 @@ class FirebaseWriter {
                             .addOnFailureListener { e -> Log.w(TAG, "Error updating document", e) }
                     } else {
                         val newDateMap = HashMap<String, MutableList<String>>()
-
                         val curWater = 1
                         val numWater = mutableListOf(curWater.toString())
                         newDateMap["numWater"] = numWater
@@ -85,6 +84,7 @@ class FirebaseWriter {
                         func(numWater)
                     } else {
                         Log.d(TAG, "No info recorded on this date")
+                        func(0)
                     }
                 } else {
                     Log.d(TAG, "No such document")
