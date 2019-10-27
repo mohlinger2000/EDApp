@@ -1,7 +1,8 @@
 # EDApp
 
 This app is being designed as a personal project for those recovering from an eating disorder.
-
+## Get Started
+Download EDApp.apk and run on Android phone/emulator to see it in action.
 ## What the App Will Do:
 The app will log the meals and snacks had throughout the day while avoiding triggers such as calories, fats, and 
 carbohydrate counts and will include an function to set alarms and remind the user to eat when they set them. 
