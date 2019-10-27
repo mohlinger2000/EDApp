@@ -39,14 +39,12 @@ class FourthActivity : AbstractActivity() {
         val textAlarmPrompt = findViewById<TextView>(R.id.alarmPrompt)
         buttonstartSetDialog = findViewById<Button>(R.id.startSetDialog)
         buttonstartSetDialog.setOnClickListener {v ->
-                textAlarmPrompt!!.setText("")
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
                     openTimePickerDialog(false)
                 }
             }
         buttonstopSetDialog = findViewById<Button>(R.id.stopSetDialog)
         buttonstopSetDialog.setOnClickListener {v ->
-                textAlarmPrompt!!.setText("")
                 cancelAlarm(this@FourthActivity)
         }
     }
@@ -79,7 +77,7 @@ class FourthActivity : AbstractActivity() {
     fun setAlarm(targetCalendar : Calendar) {
         alarmMgr = this@FourthActivity.getSystemService(Context.ALARM_SERVICE) as AlarmManager
         alarmIntent = Intent(this@FourthActivity, AlarmReceiver::class.java).let {intent ->
-            PendingIntent.getBroadcast(this@FourthActivity, 0, intent, 0)
+            PendingIntent.getBroadcast(this@FourthActivity, 1, intent, 0)
         }
         alarmMgr?.set(
             AlarmManager.RTC_WAKEUP,

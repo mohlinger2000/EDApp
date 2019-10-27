@@ -8,14 +8,14 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="186dp"
-        android:layout_height="64dp"
+        android:layout_width="307dp"
+        android:layout_height="61dp"
         android:layout_marginTop="40dp"
-        android:text="Calendar"
+        android:text="Your Daily View"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textSize="36sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.56"
+        app:layout_constraintHorizontal_bias="0.711"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
