@@ -51,17 +51,17 @@ class SecondActivity : AbstractActivity() {
                 val sn1Text = popupView.findViewById(R.id.sn1_list) as TextView
                 val sn2Text = popupView.findViewById(R.id.sn2_list) as TextView
                 val sn3Text = popupView.findViewById(R.id.sn3_list) as TextView
-                val breakfastList = dm["breakfast"]
+                val breakfastList = dm["breakfast"].toString().substring(1, dm["breakfast"].toString().length - 1)
                 breakfastText.setText("Breakfast: $breakfastList")
-                val lunchList = dm["lunch"]
+                val lunchList = dm["lunch"].toString().substring(1, dm["lunch"].toString().length - 1)
                 lunchText.setText("Lunch: $lunchList")
-                val dinnerList = dm["dinner"]
+                val dinnerList = dm["dinner"].toString().substring(1, dm["dinner"].toString().length - 1)
                 dinnerText.setText("Dinner: $dinnerList")
-                val sn1List = dm["sn1"]
+                val sn1List = dm["sn1"].toString().substring(1, dm["sn1"].toString().length - 1)
                 sn1Text.setText("Snack 1: $sn1List")
-                val sn2List = dm["sn2"]
+                val sn2List = dm["sn2"].toString().substring(1, dm["sn2"].toString().length - 1)
                 sn2Text.setText("Snack 2: $sn2List")
-                val sn3List = dm["sn3"]
+                val sn3List = dm["sn3"].toString().substring(1, dm["sn3"].toString().length - 1)
                 sn3Text.setText("Snack 3: $sn3List")
 
 

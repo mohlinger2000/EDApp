@@ -11,7 +11,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/Theme.EDApp">
 
         <activity android:name=".activities.AlarmReceiver"></activity>
         <activity android:name=".activities.FourthActivity"></activity>
@@ -39,5 +39,6 @@
                 <action android:name="Alarm" />
             </intent-filter>
         </receiver>
+
     </application>
 </manifest>
