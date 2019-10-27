@@ -7,33 +7,33 @@
     tools:context=".activities.ThirdActivity">
 
     <TextView
-        android:id="@+id/title"
-        android:layout_width="200dp"
-        android:layout_height="87dp"
-        android:text="Resources"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textSize="36sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.545"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.045" />
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Resources"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textSize="36sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.05" />
 
     <TextView
-        android:id="@+id/link"
-        android:layout_width="409dp"
-        android:layout_height="281dp"
-        android:layout_marginTop="40dp"
-        android:text="National Eating Disorder Association\nNational Suicide Hotline: 1-800-273-8255\n\nSupport Groups:\nEating Disorder Hope\nEating Disorders Anonymous\nr/EatingDisorders\nr/Bulimia\nr/Anorexia\nr/FuckEatingDisorders"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.108"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.258" />
+            android:id="@+id/link"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="National Eating Disorder Association\nNational Suicide Hotline: 1-800-273-8255\n\nSupport Groups:\nEating Disorder Hope\nEating Disorders Anonymous\nr/EatingDisorders\nr/Bulimia\nr/Anorexia\nr/FuckEatingDisorders"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.25" />
 
     <include
         android:id="@+id/bottombar"
