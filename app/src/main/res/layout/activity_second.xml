@@ -10,7 +10,7 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Calendar"
+            android:text="Your Daily View"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textSize="36sp"
             app:layout_constraintBottom_toBottomOf="parent"
